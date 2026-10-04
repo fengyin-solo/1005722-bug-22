@@ -54,6 +54,11 @@ export function resetRows(key: string): EntryRow[] {
   return rows
 }
 
+/** 丢弃内存缓存，下次读取重新从 localStorage 加载（迁移等场景用）。 */
+export function invalidateCache(): void {
+  cache = null
+}
+
 export function storageKey(): string {
   return STORAGE_KEY
 }
